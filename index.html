@@ -1,0 +1,1071 @@
+<!--
+I'm going to create my own JavaScript technical documentation
+page, and only follow the general FCC testable projects
+requirements for the project. I'll include comments for each
+that must be met.
+Also, since I don't like using CodePen, I will add the cdn (content
+delivery networks links that are there not included in the code.)
+-->
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/5.2.0/mocha.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/5.2.0/mocha.css">
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<!--
+    a nav element with a corresponding id="navbar"
+-->
+<nav id="navbar">
+    <!--
+        the navbar element contains one header element
+        with text describing thetopic of the technical
+        documentation
+    -->
+    <header>JavaScript Documentation</header>
+    <!--
+        that navbar header element comes before any
+        link elements in the navbar
+    -->
+    <!--
+        the navbar then contains link elements beneath
+        the header with the class nav-link, one for
+        every element and each will also have the class main-section
+    -->
+    <!--
+        Each nav-link class element contains text corresponding
+        to the header text within each section 
+        (e.g. for a "Hello world" section/header, 
+        the navbar has an element with the text "Hello world")
+    -->
+    <!--
+        When one clicks on a navbar element, 
+        the page navigates to the corresponding section
+        of the main-doc element 
+        (e.g. If click on "Hello World" text of a nav-link element
+        that contains that text, page navigates to section element
+        with that id that contains the corresponding header
+    -->
+    <ul>
+        <a class="nav-link" href="#Introduction" rel="internal">
+            <li>Introduction</li>
+        </a>
+        <a class="nav-link" href="#What_you_should_already_know" rel="internal">
+            <li>What you should already know</li>
+        </a>
+        <a class="nav-link" href="#Objects" rel="internal">
+            <li>Objects</li>
+        </a>
+        <a class="nav-link" href="#Syntax" rel="internal">
+            <li>Syntax</li>
+        </a>
+        <a class="nav-link" href="#Hello_world" rel="internal">
+            <li>Hello world</li>
+        </a>
+        <a class="nav-link" href="#Variables" rel="internal">
+            <li>Variables</li>
+        </a>
+        <a class="nav-link" href="#Declaring_variables" rel="internal">
+            <li>Declaring variables</li>
+        </a>
+        <a class="nav-link" href="#Variable_scope" rel="internal">
+            <li>Variable scope</li>
+        </a>
+        <a class="nav-link" href="#Global_variables" rel="internal">
+            <li>Global variables</li>
+        </a>
+        <a class="nav-link" href="#Constants" rel="internal">
+            <li>Constants</li>
+        </a>
+        <a class="nav-link" href="#Data_types" rel="internal">
+            <li>Data types</li>
+        </a>
+        <a class="nav-link" href="#if...else_statement" rel="internal">
+            <li>if...else statement</li>
+        </a>
+        <a class="nav-link" href="#while_statement" rel="internal">
+            <li>while statement</li>
+        </a>
+        <a class="nav-link" href="#Function_declarations" rel="internal">
+            <li>Function declarations</li>
+        </a>
+        <a class="nav-link" href="#Reference" rel="internal">
+            <li>Reference</li>
+        </a>
+    </ul>
+</nav>
+<!--
+        main element with id="main-doc"
+    -->
+<main id="main-doc">
+    <!--
+          the main-doc has at least 5 "main-section" sections
+        -->
+    <!--
+          Each section element has class of main-section 
+          and also an id corresponding with text of each
+          header within it. Spaces are replaced with underscores
+          (e.g. section with header "Javascript and Java" has
+          corresponding id="Javascript_and_Java")
+        -->
+    <section class="main-section" id="Introduction">
+        <!--
+            1st of at least 5 main sections
+        -->
+        <!--
+            first element of each .main-section is a header element
+            containing text describing the topic of that section.
+        -->
+        <header>Introduction</header>
+        <article>
+            <!--
+              .main-section elements contain at least 10 (total)
+              paragraph elements (not each); here's 1
+            -->
+            <p>
+                Why are there so many names for the JavaScript language?
+                There's JavaScript, Live Script, Mocha, JScript, and
+                ECMAScript. Why? This came to us thanks in good part
+                to the project of its early development. That included
+                a joint venture under the supervision of Sun Microsystems
+                (the developer of Java) and old Netscape browser. Its original
+                development name was Mocha. It had nothing to do with Java.
+                In fact, the designer ignored the instructions to design it
+                based on Java. Don't be confused about that. When it was released,
+                by Netscape and presented in its browser, it was called
+                Live Script. Then as a joke it was renamed JavaScript.
+                Not a single part of Java was used other than in the name.
+            </p>
+            <p>
+                Microsoft saw how good Netscape was and began a series
+                of attacks against them. They reverse engineered the JavaScript
+                language, renamed it JScript, and incorporated it into their
+                Internet Explorer browser, which they bundled with their
+                operating system to try to destroy Netscape.
+
+                Every major browser vendor then re-named the
+                language, so it got a bunch of different names.
+                This resulted in a mess, because the whole idea of it
+                was to be able to create a program once and be able to
+                distribute it everywhere. That's what cross-platform was
+                supposed to be.
+
+                Standards were eventually incorporated between
+                all the browser vendors, and that's where the European Computer
+                Manufacturers' Association Standards came into effect
+                (and hence ECMAScript). Visit the ECMA websidt to
+                read whitepapers on how JavaScript is supposed to
+                work with the uniform standards.
+                https://www.ecma-international.org/ecma-262/9.0/index.html#sec-terms-and-definitions
+            </p>
+            <p>
+                A very important thing you'll hear about JavaScript (or Mocha,
+                or Live Script, or JScript, or ECMAScript) is that it is
+                an object-oriented language (which, by the way, Java is not).
+                Java and JavaScript are nothing alike. They have completely
+                different syntax (the way the two languages are written), and
+                they function completely differently.
+            </p>
+            <p>
+                Your browser has different programs associated with it.
+                Three key programs functioning in your browsers for JavaScript
+                are: 1) the DOM parser. It takes computer HTML code and turns
+                it into human readable format that is visually understandable.
+                It also contains 2) a CSS parser. That renders the document
+                layout. They're actually combined in one rendering agent. The
+                JavaScript rendering engine has different names in different
+                browsers (Firefox:spidermonkey; Google:the V-8 engine;
+                Safari:Night Pro; Internet Explorer:Chikara).
+            </p>
+            <p>
+                It converts the human readable format into machine code.
+                It does that processing on the client computer (that's why
+                it's called 'client side'). With JavaScript this is done
+                in an interpreter called a JIT Compiler ('just in time') meaning
+                that it takes the human readable instructions, converts them
+                to machine code, and executes them quickly at that specific
+                moment and returns the output back in human readable form.
+            </p>
+            <p>
+                JavaScript has its own console. You can type javascript
+                commands into the javascript engine console, and it will
+                take those commands live to the JIT engine and return the
+                returned output in human readable form. Any errors and warnings
+                will also appear in the console window. In Google, right clik
+                on any page and select inspect. That opens the Developer Tools.
+                There will be a tab marked Console that will open the console
+                window. In Firefox: right-click 'Inspect Element'; Safari: open
+                Preferences, enable Developern Tools; then right-click anywhere
+                on page and select 'Inspect Element'; Internet Explorer: press F12.
+            </p>
+
+            <p>
+
+            </p>
+            <!--
+                .main-section elements contain at least 10 (total)
+                paragraph elements (not each); here's 2
+            -->
+            <p>JavaScript contains a standard library of objects such as:
+                Array, Date, and Math; a core set of language elements such
+                as: operators, control structures, and statements. These cores
+                can be extended with additional objects; for example:</p>
+            <!--
+                The .main-section elements should contain at least 5 
+                li items total (not each) 1
+            -->
+            <li>Client-side objects to control a browser and its Document
+                Object Model (DOM). For example, extensions to allow an application
+                to place elements on HTML forms and respond to user events
+                such as mouse clicks, form inputs, and page navigation.</li>
+            <!--
+                section elements should contain at least 5 li items total (not each) 2
+            -->
+            <li>Server-side extensions to allow an application to communicate with
+                a database, provide continuity of information from one invocation
+                to another of the application, or to perform file manipulations
+                on a server.</li>
+        </article>
+    </section>
+    <!--
+        Each section element with class of main-section also has id corresponding with text of each header within it. Spaces are replaced with underscores
+    -->
+    <section class="main-section" id="What_you_should_already_know">
+        <!--
+            2
+        -->
+        <!--
+            first element in each .main-section is a header element 
+            that contains text describing the section's topic
+        -->
+        <header>What you should already know</header>
+        <article>
+            <!--
+              .main-section elements contain at least 10 p elements total 
+              (not each).
+            -->
+            <p>
+                This guide assumes you have the following basic background:
+            </p>
+            <!--
+                The .main-section elements should contain at least 5 li items total (not each).
+            -->
+            <li>A general understanding of the Internet and the World Wide Web (WWW).</li>
+            <!--
+                The .main-section elements should contain at least 5 li items total (not each).
+            -->
+            <li>
+                A basic working knowledge of HyperText Markup Language (HTML).
+                You can always go to https://w3schools.com/html.
+            </li>
+            <!--
+                The .main-section elements should contain at least 5 li items total (not each).
+            -->
+            <li>Some basic programming experience. If you are new to programming,
+                try one of the tutorials linked on the main page about JavaScript.
+            </li>
+            <li>
+                Udemy has a great free JavaScript Essentials Tutorial at
+                https://www.udemy.com/javascript-essentials/learn/v4/t/lecture/4393202?start=0
+            </li>
+        </article>
+    </section>
+    <!--
+          3
+    -->
+    <!--
+        first element within each .main-section should be a header 
+        element which contains text that describes the topic of that 
+        section.
+    -->
+    <!--
+        Each section element with the class of main-section should 
+        also have an id that corresponds with the text of each header 
+        contained within it. Any spaces should be replaced with underscores 
+        (e.g. The section that contains the header "Javascript and 
+        Java" should have a corresponding id="Javascript_and_Java").
+    -->
+    <section class="main-section" id="Objects">
+        <header>Objects</header>
+        <article>
+            <!--
+                The .main-section elements should contain at least 10 
+                p elements total (not each).
+            -->
+            <p>
+                If you don't understand Objects, you won't understand any
+                programming language, no matter what it is. So, it
+                is critical that you understand the concept.
+                At its simplest basic level, your program only contains nouns,
+                adjectives, and verbs.
+
+                Nouns and adjectives describe. In the live world around you, objects
+                have properties, and those properties are nouns:
+                an apple has properties. The object 'apple' has noun
+                properties that describe it, key and value pairs such as
+                width, heigth, weight, and color are properties that describe
+                the object apple. The noun color (with its adjective 'red'
+                combined describe the object more completely.
+
+                Verbs are actions that perform an action, which is a function.
+                for example an apple could have these properties:
+                <code>
+                    {
+                        width: 25,
+                        length: 27,
+                        color: "red",
+                        weight: 5,
+                        eat: function(){"Eat the apple.";},
+                        throw: function(){"Throw the apple away.";}
+                    }
+                </code>
+            </p>
+            <p>
+                When a function is contained within an object, as they are above,
+                they're called a "Methods." Its that simple. Objects encapsulated
+                (joined together) within the squigly brackets, allow you to group
+                information together that relates to certain aspects of your
+                program.
+            </p>
+            <p>
+                Think of every object you come into contact with in your
+                world as something within those squigly brackets. Just as
+                in everyday life, objects can contain other objects { {} }.
+                Object within objects describe a heirarchy of objects.
+            </p>
+            <!--
+                The .main-section elements should contain at least 
+                10 p elements total (not each).
+            -->
+            <!--
+                The .main-section elements should contain at least 
+                10 p elements total (not each).
+            -->
+        </article>
+    </section>
+    <!--
+        Each section element with the class of main-section should also have an id that corresponds with the text of each header contained within it. Any spaces should be replaced with underscores (e.g. The section that contains the header "Javascript and Java" should have a corresponding id="Javascript_and_Java").
+    -->
+    <section class="main-section" id="Syntax">
+        <header>Syntax</header>
+        <article>
+            <p>
+                Every program has an API (application programming interface).
+                It is a collection of functions and properties. Take a look at
+                the window object in the console window. It has many functions
+                and properties already written into it. If you install
+                a library such as jQuery, you're adding an "embedded," "extension,"
+                or "extended" API. That's what libraries are. They use the native
+                JavaScript API to add functions onto its style.
+
+                Any object you create with your own methods and functions itself
+                goes into the pre-defined window object, and you're essentially
+                creating your own API. Each web page has its own window object.
+
+                The basic data types in JavaScript are:
+                <li>
+                    strings - they are defined by double quote or single quote
+                    you can escape quotes also
+                    for example, in the string "he said "hello""
+                    you have two strings - one is "he said "
+                    and the othre is ""
+                    with the word hello being JavaScript
+                    If you type that string into the Console Tab, you'll get
+                    a syntax error
+                    you escape by putting a reverse slash immediately in front
+                    of the quote you want to negate
+                    "he said \"hello\"" will return "he said "hello" "
+                    You could also mix and match using both double and
+                    single quotes
+                    as in "he said 'hello'"
+                </li>
+                <li>
+                    numbers - there are two number types: integers
+                    and floating point
+                    100
+                    200
+                    1
+                    are whole number integers
+                    1.1
+                    100.256
+                    are floating point numbers
+                </li>
+                <li>
+                    Boolean - true or false,
+                </li>
+                <li>
+                    null - empty or void, has no value
+                    undefined - has nothing assigned to it
+                </li>
+                <li>
+                    NaN - not a number
+                </li>
+                <li>
+                    symbol - a new ECMA6 data type that is unique
+                    and can be used as object keys for advanced
+                    programming
+                </li>
+
+            </p>
+        </article>
+    </section>
+
+    <section class="main-section" id="Hello_world">
+        <!--
+            4
+        -->
+        <!--
+            first element within each .main-section should be a header element which contains text that describes the topic of that section.
+        -->
+        <header>Hello world</header>
+        <article>
+            To get started with writing JavaScript, open the Developer Tools
+            in your browser: for Google, Ctrl-Shift-I, Firefox, Scratchpad
+            to write your first "Hello world" JavaScript code:
+            Select the Console Tab, and type the following code --
+            <!--
+                The .main-section elements should contain at least 5 code elements total (not each).
+            -->
+            <code>
+                alert("Hello, World!");                   
+            </code>
+
+            copy this code into you Console Tab, then hit Enter
+
+        </article>
+    </section>
+    <!--
+        Each section element with the class of main-section should also have an id that corresponds with the text of each header contained within it. Any spaces should be replaced with underscores (e.g. The section that contains the header "Javascript and Java" should have a corresponding id="Javascript_and_Java").
+    -->
+
+
+
+    <section class="main-section" id="Variables">
+        <!--
+            5
+        -->
+        <!--
+            first element within each .main-section should be a header element which contains text that describes the topic of that section.
+        -->
+        <header>Variables</header>
+        <!--
+            The .main-section elements should contain at least 10 p elements total (not each).
+        -->
+        <article>
+            <p>
+                Programs need to store values and call them up later
+                out of memory when needed.
+
+                You use variables as symbolic names for values in your application. The names of variables, called
+                identifiers, conform to
+                certain rules.
+
+                To create a variable you use the var keyword
+                Think of this as creating a box
+                <code>
+                    var name = "Ray";
+                </code>
+                The word name is not a string. It is a symbol like an
+                address
+                The equal sign is a command to the JIT compiler - an
+                assignment operator
+                It takes what is to the right of the equal sign and
+                assigns it to the box called name
+                You end lines of code in JavaScript with a semicolon
+                The assigned value could be a number, or a string, or
+                a Boolean, null, undefined, an object, or an array
+
+                You can create a variable without assigning a value
+                to it. It's just an empty box waiting for you to put
+                something in it.
+
+                You can also change the variable type, making it
+                a string, number, Boolean, an object {} or an array [].
+
+            </p>
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>
+                A JavaScript identifier must start with a letter, underscore (_), or dollar sign ($); subsequent
+                characters can also be digits
+                (0-9). Because JavaScript is case sensitive, letters include the characters "A" through "Z" (uppercase)
+                and the
+                characters "a" through "z" (lowercase).
+            </p>
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>
+                You can use ISO 8859-1 or Unicode letters such as å and ü in identifiers. You can also use the Unicode
+                escape sequences as
+                characters in identifiers. Some examples of legal names are Number_hits, temp99, and _name.
+            </p>
+        </article>
+    </section>
+    <!--
+        Each section element with the class of main-section should also have an id that corresponds with the text of each header contained within it. Any spaces should be replaced with underscores (e.g. The section that contains the header "Javascript and Java" should have a corresponding id="Javascript_and_Java").
+    -->
+    <section class="main-section" id="Declaring_variables">
+        <!--
+            6
+        -->
+        <!--
+            first element within each .main-section should be a header element which contains text that describes the topic of that section.
+        -->
+        <header>Declaring variables</header>
+        <article>
+            You can declare a variable in three ways:
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>
+                With the keyword var. For example, <code>var x = 42.</code> This syntax can be used to declare both
+                local
+                and global variables.
+            </p>
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>
+                By simply assigning it a value. For example, <code>x = 42.</code> This always declares a global
+                variable.
+                It generates a strict JavaScript warning. You shouldn't use this variant.
+            </p>
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>
+                With the keyword let. For example,<code> let y = 13.</code> This syntax can be used to declare a block
+                scope
+                local variable. See Variable scope below.
+            </p>
+        </article>
+    </section>
+    <!--
+        Each section element with the class of main-section should also have an id that corresponds with the text of each header contained within it. Any spaces should be replaced with underscores (e.g. The section that contains the header "Javascript and Java" should have a corresponding id="Javascript_and_Java").
+    -->
+    <section class="main-section" id="Variable_scope">
+        <!--
+            7
+        -->
+        <!--
+            first element within each .main-section should be a header element which contains text that describes the topic of that section.
+        -->
+        <header>Variable scope</header>
+        <article>
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>
+                When you declare a variable outside of any function,
+                it is called a global variable, because it is available
+                to any other code in the current document. When you declare
+                a variable within a function, it is called a local
+                variable, because it is available only within that
+                function.
+            </p>
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>
+                JavaScript before ECMAScript 2015 does not have block
+                statement scope; rather, a variable declared within
+                a block is local to the function (or global scope) that
+                the block resides within. For example the following
+                code will log 5, because the scope of x is the function
+                (or global context) within which x is declared, not
+                the block, which in this case is an if statement.
+            </p>
+            <!--
+                The .main-section elements should contain at least 5 code elements total (not each).
+            -->
+            <code>
+                if (true) {
+                    var x = 5;
+                }
+                console.log(x);  // 5
+            </code>
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>
+                This behavior changes, when using the let declaration introduced in ECMAScript 2015.
+            </p>
+            <!--
+                The .main-section elements should contain at least 5 code elements total (not each).
+            -->
+            <code>
+                if (true) {
+                    let y = 5;
+                }
+                console.log(y);  
+                // ReferenceError: y is not defined
+            </code>
+        </article>
+    </section>
+    <!--
+        Each section element with the class of main-section should also have an id that corresponds with the text of each header contained within it. Any spaces should be replaced with underscores (e.g. The section that contains the header "Javascript and Java" should have a corresponding id="Javascript_and_Java").
+    -->
+    <section class="main-section" id="Global_variables">
+        <!--
+            8
+        -->
+        <!--
+            first element within each .main-section should be a header element which contains text that describes the topic of that section.
+        -->
+        <header>Global variables</header>
+        <article>
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>Global variables are in fact properties of the global object. 
+                In web pages the global object is window, so you can set and 
+                access global variables using the window.variable syntax.
+            </p>
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>
+                Consequently, you can access global variables declared 
+                in one window or frame from another window or frame by specifying 
+                the window or frame name. For example, if a variable called 
+                phoneNumber is declared in a document, you can refer to this 
+                variable from an iframe as parent.phoneNumber.
+            </p>
+        </article>
+    </section>
+    <!--
+        Each section element with the class of main-section should also have an id that corresponds with the text of each header contained within it. Any spaces should be replaced with underscores (e.g. The section that contains the header "Javascript and Java" should have a corresponding id="Javascript_and_Java").
+    -->
+    <section class="main-section" id="Constants">
+        <!--
+            9
+        -->
+        <!--
+            first element within each .main-section should be a header element which contains text that describes the topic of that section.
+        -->
+        <header>Constants</header>
+        <article>
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>
+                You can create a read-only, named constant with 
+                the const keyword. The syntax of a constant identifier
+                is the same as for a variable identifier: it must 
+                start with a letter, underscore or dollar sign and 
+                can contain alphabetic, numeric, or underscore 
+                characters.
+            </p>
+            <!--
+                The .main-section elements should contain at least 5 code elements total (not each).
+            -->
+            <code>
+                const PI = 3.14;
+            </code>
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>
+                A constant cannot change value through assignment or 
+                be re-declared while the script is running. It has
+                to be initialized to a value.
+
+                You can't assing a value later on. The value has to
+                be assigned right away when you create the constant.
+            </p>
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>
+                The scope rules for constants are the same as those for let block scope variables. If the const keyword
+                is omitted, the identifier is assumed to represent 
+                a variable.
+            </p>
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>
+                You cannot declare a constant with the same name as a function or variable in the same scope. For
+                example:
+            </p>
+            <!--
+                The .main-section elements should contain at least 5 code elements total (not each).
+            -->
+            <code>
+                // THIS WILL CAUSE AN ERROR
+                function f() {};
+                const f = 5;
+
+                // THIS WILL CAUSE AN ERROR ALSO
+                function f() {
+                const g = 5;
+                var g;
+      
+                //statements
+                }
+            </code> 
+            However, object attributes are not protected, so the following 
+            statement is executed without problems.
+            <!--
+                The .main-section elements should contain at least 5 code elements total (not each).
+            -->
+            <code>
+                const MY_OBJECT = {"key": "value"};
+                MY_OBJECT.key = "otherValue";
+            </code>
+        </article>
+    </section>
+    <!--
+        Each section element with the class of main-section should also have an id that corresponds with the text of each header contained within it. Any spaces should be replaced with underscores (e.g. The section that contains the header "Javascript and Java" should have a corresponding id="Javascript_and_Java").
+    -->
+    <section class="main-section" id="Data_types">
+        <!--
+            10
+        -->
+        <!--
+            first element within each .main-section should be a header element which contains text that describes the topic of that section.
+        -->
+        <header>Data types</header>
+        <article>
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>
+                The latest ECMAScript standard defines seven data types:
+            </p>
+            <!--
+                The .main-section elements should contain at least 5 li items total (not each).
+            -->
+           
+                <p>
+                    Six data types that are primitives:
+                </p>
+                <ul>
+                    <!--
+                        The .main-section elements should contain at least 5 li items total (not each).
+                    -->
+                    <li>Boolean. true and false.</li>
+                    <!--
+                        The .main-section elements should contain at least 5 li items total (not each).
+                    -->
+                    <li>null. A special keyword denoting a null value. Because JavaScript is case-sensitive, null is
+                        not
+                        the same as Null, NULL, or any other variant.</li>
+                    <!--
+                        The .main-section elements should contain at least 5 li items total (not each).
+                    -->
+                    <li>undefined. A top-level property whose value is undefined.</li>
+                    <!--
+                        The .main-section elements should contain at least 5 li items total (not each).
+                    -->
+                    <li>Number. 42 or 3.14159.</li>
+                    <!--
+                        The .main-section elements should contain at least 5 li items total (not each).
+                    -->
+                    <li>String. "Howdy"</li>
+                    <!--
+                        The .main-section elements should contain at least 5 li items total (not each).
+                    -->
+                    <li>Symbol (new in ECMAScript 2015). A data type whose instances are unique and immutable.</li>
+                </ul>
+                <!--
+                    The .main-section elements should contain at least 5 li items total (not each).
+                -->
+            <li>and Object</li>
+            Although these data types are a relatively small amount, 
+            they enable you to perform useful functions with
+            your applications. Objects and functions are the other 
+            fundamental elements in the language. You can think of objects 
+            as named containers for values, and functions as procedures 
+            that your application can perform.
+        </article>
+    </section>
+    <!--
+        Each section element with the class of main-section should also have an id that corresponds with the text of each header contained within it. Any spaces should be replaced with underscores (e.g. The section that contains the header "Javascript and Java" should have a corresponding id="Javascript_and_Java").
+    -->
+    <section class="main-section" id="if...else_statement">
+        <!--
+            11
+        -->
+        <!--
+            first element within each .main-section should be a header element which contains text that describes the topic of that section.
+        -->
+        <header>if...else statement</header>
+        <article>
+            Use the if statement to execute a statement if a logical 
+            condition is true. Use the optional else clause to
+            execute a statement if the condition is false. 
+            An if statement looks as follows:
+            <!--
+                The .main-section elements should contain at least 5 code elements total (not each).
+            -->
+            <code>
+                if (condition) {
+                    statement_1;
+                } else {
+                    statement_2;
+                }
+            </code> condition can be any expression that evaluates 
+            to true or false. See Boolean for an explanation
+            of what evaluates to true and false. If condition 
+            evaluates to true, statement_1 is executed; otherwise,
+            statement_2 is executed. statement_1 and statement_2 
+            can be any statement, including further nested if 
+            statements.
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>
+                You may also compound the statements using else if 
+                to have multiple conditions tested in sequence, as
+                follows:
+            </p>
+            <!--
+                The .main-section elements should contain at least 5 code elements total (not each).
+            -->
+            <code>
+                if (condition_1) {
+                    statement_1;
+                } else if (condition_2) {
+                    statement_2;
+                } else if (condition_n) {
+                    statement_n;
+                } else {
+                    statement_last;
+                } 
+            </code> 
+            In the case of multiple conditions only the first logical 
+            condition which evaluates to true will be executed. 
+            To execute multiple statements, group them within a block 
+            statement ({ ... }). In general, it's good practice to 
+            always use block statements, especially when nesting if 
+            statements:
+            <!--
+                The .main-section elements should contain at least 5 code elements total (not each).
+            -->
+            <code>
+                if (condition) {
+                    statement_1_runs_if_condition_is_true;
+                    statement_2_runs_if_condition_is_true;
+                } else {
+                    statement_3_runs_if_condition_is_false;
+                    statement_4_runs_if_condition_is_false;
+                }
+            </code>
+            It is advisable to not use simple assignments in a 
+            conditional expression, because the assignment
+            can be confused with equality when glancing over the 
+            code. For example, do not use the following code:
+            <!--
+                The .main-section elements should contain at least 5 code elements total (not each).
+            -->
+            <code>
+                if (x = y) {
+                    /* statements here */
+                }
+            </code>
+            If you need to use an assignment in a conditional 
+            expression, a common practice is to put additional
+            parentheses around the assignment. For example:
+            <!--
+                The .main-section elements should contain at least 5 code elements total (not each).
+            -->
+            <code>
+                if ((x = y)) {
+                    /* statements here */
+                }
+            </code>
+        </article>
+    </section>
+    <!--
+        Each section element with the class of main-section should also have an id that corresponds with the text of each header contained within it. Any spaces should be replaced with underscores (e.g. The section that contains the header "Javascript and Java" should have a corresponding id="Javascript_and_Java").
+    -->
+    <section class="main-section" id="while_statement">
+        <!--
+            12
+        -->
+        <!--
+            first element within each .main-section should be a header element which contains text that describes the topic of that section.
+        -->
+        <header>while statement</header>
+        <article>
+            A while statement executes its statements as long as 
+            a specified condition evaluates to true. A while
+            statement looks as follows:
+            <!--
+                The .main-section elements should contain at least 5 code elements total (not each).
+            -->
+            <code>
+                while (condition)
+                    statement
+            </code>
+                If the condition becomes false, statement within 
+                the loop stops executing and control passes to 
+                the statement following the loop.
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>
+                The condition test occurs before statement in the loop is executed. If the condition returns true,
+                statement is executed and the condition is tested again. If the condition returns false, execution stops and
+                control is passed to the statement following while.
+            </p>
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>
+                To execute multiple statements, use a block statement 
+                ({ ... }) to group those statements.
+            </p>
+
+            Example:
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>
+                The following while loop iterates as long as n is less 
+                than three:
+            </p>
+            <!--
+                The .main-section elements should contain at least 5 code elements total (not each).
+            -->
+            <code>
+                var n = 0;
+                var x = 0;
+                while (n < 3) {                 
+                n++;
+                x += n;
+                }               
+            </code>
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>
+                With each iteration, the loop increments n and 
+                adds that value to x. Therefore, x and n take on 
+                the following values:
+            </p>
+            <!--
+                The .main-section elements should contain at least 5 li items total (not each).
+            -->
+            <li>After the first pass: n = 1 and x = 1</li>
+            <!--
+                The .main-section elements should contain at least 5 li items total (not each).
+            -->
+            <li>After the second pass: n = 2 and x = 3</li>
+            <!--
+                The .main-section elements should contain at least 5 li items total (not each).
+            -->
+            <li>After the third pass: n = 3 and x = 6</li>
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>After completing the third pass, the condition n &lt 3 is no longer true, so the loop terminates.</p>
+        </article>
+    </section>
+    <!--
+        Each section element with the class of main-section should also have an id that corresponds with the text of each header contained within it. Any spaces should be replaced with underscores (e.g. The section that contains the header "Javascript and Java" should have a corresponding id="Javascript_and_Java").
+    -->
+    <section class="main-section" id="Function_declarations">
+        <!--
+            13
+        -->
+        <!--
+            first element within each .main-section should be a header element which contains text that describes the topic of that section.
+        -->
+        <header>Function declarations</header>
+        <article>
+            A function definition (also called a function declaration, 
+            or function statement) consists of the function keyword, 
+            followed by:
+            <!--
+                The .main-section elements should contain at least 5 li items total (not each).
+            -->
+            <li>The name of the function.</li>
+            <!--
+                The .main-section elements should contain at least 5 li items total (not each).
+            -->
+            <li>A list of arguments to the function, enclosed in 
+                parentheses and separated by commas.</li>
+            <!--
+                The .main-section elements should contain at least 5 li items total (not each).
+            -->
+            <li>The JavaScript statements that define the function, 
+                enclosed in curly brackets, { }.</li>
+            <!--
+                The .main-section elements should contain at least 5 li items total (not each).
+            -->
+            <p>
+                For example, the following code defines a simple function named square:
+            </p>
+            <!--
+                The .main-section elements should contain at least 5 code elements total (not each).
+            -->
+            <code>
+                function square(number) {
+                    return number * number;
+                }
+            </code>
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>
+                The function square takes one argument, called 
+                number. The function consists of one statement 
+                that says to return the argument of the function 
+                (that is, number) multiplied by itself. The return 
+                statement specifies the value returned by the function.
+            </p>
+            <!--
+                The .main-section elements should contain at least 5 code elements total (not each).
+            -->
+            <code>
+                return number * number;
+            </code>
+            <!--
+                The .main-section elements should contain at least 10 p elements total (not each).
+            -->
+            <p>
+                Primitive parameters (such as a number) are passed to 
+                functions by value; the value is passed to the function,
+                but if the function changes the value of the parameter, 
+                this change is not reflected globally or in the calling
+                function.
+            </p>
+        </article>
+    </section>
+    <!--
+        Each section element with the class of main-section should also have an id that corresponds with the text of each header contained within it. Any spaces should be replaced with underscores (e.g. The section that contains the header "Javascript and Java" should have a corresponding id="Javascript_and_Java").
+    -->
+    <section class="main-section" id="Reference">
+        <!--
+            14
+        -->
+        <!--
+            first element within each .main-section should be a header element which contains text that describes the topic of that section.
+        -->
+        <header>Reference</header>
+        <article>
+            <!--
+                The .main-section elements should contain at least 5 li items total (not each).
+            -->
+            <!--
+                use at least one media query.
+            -->
+            <li>All the documentation in this page is taken from <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+                    target="_blank">MDN</a>
+        </article>
+    </section>
+</main>
+
+<body>
+
+
+    <!--
+        use the testable-projects-fcc cdn script link
+    -->
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
